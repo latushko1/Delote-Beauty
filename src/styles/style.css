@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Cormorant Garamond', serif;
+}
+
+@layer components {
+	.container {
+		@apply max-w-[1296px];
+	}
+}
+
+.Garamond {
+	font-family: 'EB Garamond', serif;
+}
+
+.animCircle {
+	animation: circle 4s infinite ease-in-out;
+}
+
+@keyframes circle {
+	0% {
+		transform: translateY(10px);
+	}
+
+	50% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(10px);
+	}
+}

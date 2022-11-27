@@ -1,0 +1,57 @@
+---
+import Header from '../components/header';
+import insta from '/images/insta.svg';
+import logo from '/images/logo.svg';
+
+const { title } = Astro.props;
+interface Props {
+	title: string;
+}
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div>
+			<Header client:load />
+			<slot />
+			<section class='bg-secondary'>
+				<footer
+					class='grid sm:grid-cols-4 container place-items-center justify-center items-center text-center text-primary pt-[120px] pb-9'
+				>
+					<a href='/'>
+						<img src={logo} alt='' />
+					</a>
+					<div class='mt-8 ml-4 flex flex-col gap-[25px]'>
+						<h4 class='Garamond text-primary text-2xl'>Контакты</h4>
+						<p>+7 (812) 123-45-67</p>
+						<p>+7 (911) 123-45-67</p>
+						<p>Новоостровский проспект, дом 36 лит. С</p>
+					</div>
+
+					<div class='mt-8 ml-4 flex flex-col gap-[25px]'>
+						<h4 class='Garamond text-primary text-2xl'>Режим работы</h4>
+						<p>C 10:00 до 21:00 (Пн-Пт)</p>
+						<p>С 11:00 до 20:00 (Сб-Вс)</p>
+					</div>
+
+					<div class='items-center grid place-items-center'>
+						<h4 class='Garamond text-primary text-2xl'>Мы в инстаграм</h4>
+						<img src={insta} alt='inst' />
+					</div>
+				</footer>
+				<div
+					class='py-5 border-t-2 border-primary border-opacity-50 container text-center text-primary'
+				>
+					<p class='Cormonat opacity-50'>Copyright © 2017 - 2022</p>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

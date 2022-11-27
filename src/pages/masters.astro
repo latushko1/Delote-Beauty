@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/style.css';
+import Images from '../components/images';
+
+const items = [
+	{
+		image: '/images/master1.jpg',
+		text: 'Елена Васильевна',
+		sub: 'Визажист',
+	},
+
+	{
+		image: '/images/master2.jpg',
+		text: 'Елена Васильевна',
+		sub: 'Визажист',
+	},
+
+	{
+		image: '/images/master1.jpg',
+		text: 'Елена Васильевна',
+		sub: 'Визажист',
+	},
+
+	{
+		image: '/images/master3.jpg',
+		text: 'Елена Васильевна',
+		sub: 'Визажист',
+	},
+	{
+		image: '/images/master4.jpg',
+		text: 'Елена Васильевна',
+		sub: 'Визажист',
+	},
+	{
+		image: '/images/master5.jpg',
+		text: 'Елена Васильевна',
+		sub: 'Визажист',
+	},
+];
+---
+
+<Base title='Мастера'>
+	<section
+		class='bg-secondary min-h-screen w-full bg-cover text-primary grid place-items-center'
+	>
+		<h1
+			class='Garamod font-bold text-4xl sm:text-7xl text-center max-w-[961px] leading-tight py-[80px]'
+		>
+			Наши мастера
+		</h1>
+		<div
+			class='container grid grid-cols-1 gap-5 sm:grid-cols-3 place-items-center'
+		>
+			{
+				items.map((item) => (
+					<Images image={item.image} text={item.text} sub={item.sub} />
+				))
+			}
+		</div>
+	</section>
+</Base>

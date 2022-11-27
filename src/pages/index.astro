@@ -1,0 +1,85 @@
+---
+import Images from '../components/images';
+import Base from '../layouts/Base.astro';
+import '../styles/style.css';
+
+const items = [
+	{
+		image: '/images/parick.jpg',
+		text: 'Парикмахер',
+	},
+	{
+		image: '/images/manic.jpg',
+		text: 'Маникюр',
+	},
+	{
+		image: '/images/pedic.jpg',
+		text: 'Педикюр',
+	},
+	{
+		image: '/images/cosmetica.jpg',
+		text: 'Педикюр',
+	},
+	{
+		image: '/images/body.jpg',
+		text: 'Педикюр',
+	},
+	{
+		image: '/images/viz.jpg',
+		text: 'Педикюр',
+	},
+];
+---
+
+<Base title='Главная'>
+	<section
+		class='bg-[url(/images/hero-bg.jpg)] min-h-screen w-full bg-cover grid place-items-center text-primary'
+	>
+		<h1
+			class='Garamod font-bold text-4xl sm:text-7xl text-center max-w-[961px] leading-tight'
+		>
+			Салон красоты «Delote-Beauty» на Крестовском
+		</h1>
+		<p class='flex gap-3 items-center justify-center text-lg leading-snug'>
+			<svg
+				width='20'
+				height='30'
+				viewBox='0 0 20 30'
+				fill='none'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<rect x='0.5' y='0.5' width='19' height='29' rx='7.5' stroke='white'
+				></rect>
+				<circle class='animCircle' cx='10' cy='9' r='2' fill='white'></circle>
+			</svg>
+			Прокрутите вниз
+		</p>
+	</section>
+
+	<section class='bg-secondary text-primary'>
+		<p class='max-w-[956px] text-lg pt-[220px] text-center mx-auto'>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu nibh
+			vitae amet. Ipsum, pharetra donec ornare velit. Id at quisque accumsan
+			risus ac ipsum ut. Sit elit, facilisi proin non malesuada sociis
+			tristique. Viverra augue lorem ut quisque quam tortor, malesuada iaculis.
+			Et elementum at nulla venenatis, faucibus integer. Auctor neque eros,
+			viverra rutrum. Fames ultrices condimentum tortor nec penatibus. Velit
+			imperdiet sapien fringilla vestibulum sit fames.
+		</p>
+
+		<div
+			class='container grid grid-cols-1 gap-5 sm:grid-cols-3 pt-[126px] place-items-center'
+		>
+			{items.map((item) => <Images image={item.image} text={item.text} />)}
+		</div>
+
+		<div
+			class='sm:grid-cols-4 grid place-items-center py-[150px] items-center justify-center'
+		>
+			<img src='/images/logo-1.svg' alt='logo1' />
+			<img src='/images/logo-2.svg' alt='logo2' />
+			<img src='/images/logo-3.svg' alt='logo3' />
+			<img src='/images/logo-4.svg' alt='logo4' />
+		</div>
+	</section>
+</Base>
